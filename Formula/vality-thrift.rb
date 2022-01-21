@@ -19,7 +19,7 @@ class ValityThrift < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "openssl@1.1"
-  
+
   conflicts_with "thrift", because: "also installs a 'thrift' executable"
 
   def install
