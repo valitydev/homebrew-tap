@@ -35,7 +35,7 @@ jobs:
         run: git push --delete origin $BRANCH
 
       - name: Mattermost Notification
-        if: always() && runner.os = 'Linux'
+        if: always() && runner.os == 'Linux'
         uses: rtCamp/action-slack-notify@v2.2.0
         env:
           SLACK_USERNAME: Homebrew
