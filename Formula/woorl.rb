@@ -1,9 +1,11 @@
 class Woorl < Formula
   desc "Woody curl"
   homepage "https://github.com/valitydev/woorl/"
-  url "https://github.com/valitydev/woorl/archive/1.5.tar.gz"
-  sha256 "e6caf0194111ee239e6d305786778ae948b1411849eb09559e941774b417179e"
+  url "https://github.com/valitydev/woorl.git",
+      tag:      "1.5",
+      revision: "324c4dd2dc21f01200a5302d58b8d9424e74814d"
   license "Apache-2.0"
+  head "https://github.com/valitydev/woorl.git", branch: "master"
 
   bottle do
     root_url "https://github.com/valitydev/homebrew-tap/releases/download/woorl-1.5"
@@ -12,6 +14,7 @@ class Woorl < Formula
 
   depends_on "rebar3" => :build
   depends_on "erlang"
+  depends_on "vality-thrift" => :run
 
   def install
     system "rebar3", "escriptize"
