@@ -33,13 +33,3 @@ jobs:
         env:
           BRANCH: ${{ github.event.pull_request.head.ref }}
         run: git push --delete origin $BRANCH
-
-      - name: Mattermost Notification
-        uses: rtCamp/action-slack-notify@v2.2.0
-        env:
-          SLACK_USERNAME: Homebrew
-          SLACK_WEBHOOK: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
-          SLACK_ICON: https://brew.sh/assets/img/homebrew-256x256.png
-          SLACK_COLOR: ${{ job.status }}
-          SLACK_LINK_NAMES: true
-          SLACK_FOOTER: ""
