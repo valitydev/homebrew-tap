@@ -5,6 +5,12 @@ class ValityThrift < Formula
   sha256 "01d38bab2b49bf2272ef449379b760e1b3bc7d1f1a7e2d2a99f802e2acb0aa76"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/valitydev/homebrew-tap/releases/download/vality-thrift-0.14.2"
+    sha256 cellar: :any,                 big_sur:      "41473eeb1efb737c1e07f651dd38a46e23fd32998f3cd2ac4759260b190e513c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f78f17a998f0276f63abda706aa067daabe9eadfd5cdbfebbb415aa6eafe00b5"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "bison" => :build
