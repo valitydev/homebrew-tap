@@ -5,8 +5,8 @@
     "packageRules":[
        {
           "matchPackageNames":[
-             "woorl",
-             "vality-thrift"
+             "valitydev/woorl",
+             "valitydev/thrift"
           ],
           "versioning":"semver-coerced"
        }
