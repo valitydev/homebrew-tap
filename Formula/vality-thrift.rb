@@ -1,7 +1,7 @@
 class ValityThrift < Formula
   desc "Vality version of Apache Thrift"
   homepage "https://github.com/valitydev/thrift/"
-  url "https://github.com/valitydev/thrift/archive/0.14.2.tar.gz"
+  url "https://github.com/valitydev/thrift/archive/0.17.0.tar.gz"
   sha256 "01d38bab2b49bf2272ef449379b760e1b3bc7d1f1a7e2d2a99f802e2acb0aa76"
   license "Apache-2.0"
 
