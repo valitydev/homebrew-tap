@@ -1,8 +1,8 @@
 class ValityThrift < Formula
   desc "Vality version of Apache Thrift"
   homepage "https://github.com/valitydev/thrift/"
-  url "https://github.com/valitydev/thrift/archive/0.14.2.tar.gz"
-  sha256 "01d38bab2b49bf2272ef449379b760e1b3bc7d1f1a7e2d2a99f802e2acb0aa76"
+  url "https://github.com/valitydev/thrift/archive/0.17.0.tar.gz"
+  sha256 "9524405c7e0b977c264fca5043b7816e60e8a92d70f7529cb9107a17bc42b1e7"
   license "Apache-2.0"
 
   bottle do
@@ -19,6 +19,7 @@ class ValityThrift < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "openssl@1.1"
+  uses_from_macos "zlib"
 
   conflicts_with "thrift", because: "also installs a 'thrift' executable"
 
@@ -36,13 +37,19 @@ class ValityThrift < Formula
       --without-go
       --without-haskell
       --without-java
+      --without-kotlin
+      --without-python
+      --without-py3
+      --without-haxe
       --without-netstd
-      --without-nodejs
       --without-perl
       --without-php
       --without-php_extension
-      --without-py3
-      --without-python
+      --without-dart
+      --without-d
+      --without-nodejs
+      --without-nodets
+      --without-lua
       --without-rs
       --without-ruby
       --without-swift
