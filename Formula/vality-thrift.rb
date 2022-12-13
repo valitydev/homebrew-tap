@@ -1,12 +1,9 @@
 class ValityThrift < Formula
   desc "Vality version of Apache Thrift"
   homepage "https://github.com/valitydev/thrift/"
+  url "https://github.com/valitydev/thrift/archive/0.17.0.tar.gz"
+  sha256 "9524405c7e0b977c264fca5043b7816e60e8a92d70f7529cb9107a17bc42b1e7"
   license "Apache-2.0"
-
-  stable do
-    url "https://github.com/valitydev/thrift/archive/0.17.0.tar.gz"
-    sha256 "9524405c7e0b977c264fca5043b7816e60e8a92d70f7529cb9107a17bc42b1e7"
-  end
 
   bottle do
     root_url "https://github.com/valitydev/homebrew-tap/releases/download/vality-thrift-0.14.2"
@@ -15,15 +12,10 @@ class ValityThrift < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f78f17a998f0276f63abda706aa067daabe9eadfd5cdbfebbb415aa6eafe00b5"
   end
 
-  head do
-    url "https://github.com/valitydev/thrift.git"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-    depends_on "pkg-config" => :build
-  end
-
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
+  depends_on "pkg-config" => :build
   depends_on "bison" => :build
   depends_on "boost" => [:build, :test]
   depends_on "openssl@1.1"
@@ -32,7 +24,7 @@ class ValityThrift < Formula
   conflicts_with "thrift", because: "also installs a 'thrift' executable"
 
   def install
-    system "./bootstrap.sh" unless build.stable?
+    system "./bootstrap.sh"
 
     args = %W[
       --disable-debug
