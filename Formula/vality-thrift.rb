@@ -14,10 +14,10 @@ class ValityThrift < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
   depends_on "bison" => :build
   depends_on "boost" => [:build, :test]
+  depends_on "libtool" => :build
+  depends_on "pkg-config" => :build
   depends_on "openssl@1.1"
   uses_from_macos "zlib"
 
