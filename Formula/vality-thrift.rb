@@ -1,9 +1,18 @@
 class ValityThrift < Formula
   desc "Vality version of Apache Thrift"
   homepage "https://github.com/valitydev/thrift/"
-  url "https://github.com/valitydev/thrift/archive/0.17.0.tar.gz"
-  sha256 "9524405c7e0b977c264fca5043b7816e60e8a92d70f7529cb9107a17bc42b1e7"
   license "Apache-2.0"
+
+  stable do
+    url "https://github.com/valitydev/thrift/archive/0.17.0.tar.gz"
+    sha256 "9524405c7e0b977c264fca5043b7816e60e8a92d70f7529cb9107a17bc42b1e7"
+
+    # Fix -flat_namespace being used on Big Sur and later.
+    patch do
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/03cf8088210822aa2c1ab544ed58ea04c897d9c4/libtool/configure-big_sur.diff"
+      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+    end
+  end
 
   bottle do
     root_url "https://github.com/valitydev/homebrew-tap/releases/download/vality-thrift-0.14.2"
@@ -12,18 +21,24 @@ class ValityThrift < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f78f17a998f0276f63abda706aa067daabe9eadfd5cdbfebbb415aa6eafe00b5"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
+  head do
+    url "https://github.com/valitydev/thrift.git"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+    depends_on "pkg-config" => :build
+  end
+
   depends_on "bison" => :build
   depends_on "boost" => [:build, :test]
-  depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
   depends_on "openssl@1.1"
+  uses_from_macos "zlib"
 
   conflicts_with "thrift", because: "also installs a 'thrift' executable"
 
   def install
-    system "./bootstrap.sh"
+    system "./bootstrap.sh" unless build.stable?
 
     args = %W[
       --disable-debug
@@ -36,13 +51,19 @@ class ValityThrift < Formula
       --without-go
       --without-haskell
       --without-java
+      --without-kotlin
+      --without-python
+      --without-py3
+      --without-haxe
       --without-netstd
-      --without-nodejs
       --without-perl
       --without-php
       --without-php_extension
-      --without-py3
-      --without-python
+      --without-dart
+      --without-d
+      --without-nodejs
+      --without-nodets
+      --without-lua
       --without-rs
       --without-ruby
       --without-swift
