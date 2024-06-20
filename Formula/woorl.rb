@@ -10,11 +10,11 @@ class Woorl < Formula
   depends_on "erlang"
 
   def install
+    system "rebar3", "escriptize"
     bin.install "_build/default/bin/woorl" => "woorl"
   end
 
   test do
-    system "rebar3", "escriptize"
     system "#{bin}/woorl", "-h"
   end
 end
