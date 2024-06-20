@@ -6,11 +6,13 @@ class Woorl < Formula
   license "Apache-2.0"
   head "https://github.com/valitydev/woorl.git", branch: "master"
 
+  depends_on "rebar3" => :build
   depends_on "erlang"
-  depends_on "vality-thrift"
+  depends_on "vality-thrift" => :optional
 
   def install
-    bin.install "woorl"
+    system "rebar3", "escriptize"
+    bin.install "_build/default/bin/woorl" => "woorl"
   end
 
   test do
