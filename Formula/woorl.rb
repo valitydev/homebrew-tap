@@ -8,6 +8,7 @@ class Woorl < Formula
 
   depends_on "rebar3" => :build
   depends_on "erlang"
+  depends_on "vality-thrift" => :optional
 
   def install
     system "rebar3", "escriptize"
