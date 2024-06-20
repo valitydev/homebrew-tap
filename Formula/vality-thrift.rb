@@ -6,6 +6,12 @@ class ValityThrift < Formula
   license "Apache-2.0"
   head "https://github.com/valitydev/thrift.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/valitydev/homebrew-tap/releases/download/vality-thrift-0.19.0"
+    sha256 cellar: :any,                 arm64_sonoma: "7828e560e3667013714ecd4dd4d9b1e583839123cbe60e9193468862b600e150"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "38394968816de9075cf2e0912cf2add979bcee8f43459c250fbc23340bdc88a4"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "bison" => :build
