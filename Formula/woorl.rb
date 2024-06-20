@@ -1,7 +1,7 @@
 class Woorl < Formula
   desc "Woody curl"
   homepage "https://github.com/valitydev/woorl/"
-  url "https://codeload.github.com/valitydev/woorl/tar.gz/refs/tags/1.9"
+  url "https://github.com/valitydev/woorl/archive/refs/tags/1.9.tar.gz"
   sha256 "7fb978afc44798ee85bd87e8f30241b8a027754ec8caeaf3c8d686540a4e7be7"
   license "Apache-2.0"
   head "https://github.com/valitydev/woorl.git", branch: "master"
