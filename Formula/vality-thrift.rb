@@ -1,16 +1,10 @@
 class ValityThrift < Formula
   desc "Vality version of Apache Thrift"
   homepage "https://github.com/valitydev/thrift/"
-  url "https://github.com/valitydev/thrift/archive/0.14.2.tar.gz"
-  sha256 "01d38bab2b49bf2272ef449379b760e1b3bc7d1f1a7e2d2a99f802e2acb0aa76"
+  url "https://github.com/valitydev/thrift/archive/refs/tags/0.19.0.tar.gz"
+  sha256 "80b3a936590148db5187b57323d8a7ba42bc1cd0e5da6e5e30fd95d00ce5564b"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://github.com/valitydev/homebrew-tap/releases/download/vality-thrift-0.14.2"
-    sha256 cellar: :any,                 arm64_monterey: "ae4f0e672d001aa86796b02177804be83a908fca4643dab76d5823497d446957"
-    sha256 cellar: :any,                 big_sur:        "41473eeb1efb737c1e07f651dd38a46e23fd32998f3cd2ac4759260b190e513c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f78f17a998f0276f63abda706aa067daabe9eadfd5cdbfebbb415aa6eafe00b5"
-  end
+  head "https://github.com/valitydev/thrift.git", branch: "master"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
@@ -19,6 +13,7 @@ class ValityThrift < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "openssl@1.1"
+  uses_from_macos "zlib"
 
   conflicts_with "thrift", because: "also installs a 'thrift' executable"
 
@@ -36,13 +31,19 @@ class ValityThrift < Formula
       --without-go
       --without-haskell
       --without-java
+      --without-kotlin
+      --without-python
+      --without-py3
+      --without-haxe
       --without-netstd
-      --without-nodejs
       --without-perl
       --without-php
       --without-php_extension
-      --without-py3
-      --without-python
+      --without-dart
+      --without-d
+      --without-nodejs
+      --without-nodets
+      --without-lua
       --without-rs
       --without-ruby
       --without-swift
@@ -62,7 +63,7 @@ class ValityThrift < Formula
   end
 
   test do
-    (testpath/"test.thrift").write <<~'EOS'
+    (testpath/"test.thrift").write <<~EOS
       service MultiplicationService {
         i32 multiply(1:i32 x, 2:i32 y),
       }
