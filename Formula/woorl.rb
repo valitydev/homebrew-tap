@@ -2,8 +2,8 @@ class Woorl < Formula
   desc "Woody curl"
   homepage "https://github.com/valitydev/woorl/"
   url "https://github.com/valitydev/woorl.git",
-      tag:      "1.5",
-      revision: "324c4dd2dc21f01200a5302d58b8d9424e74814d"
+      tag:      "1.9",
+      revision: "d7b3e5c959b693b166950bbec78e1c4ed7a10285"
   license "Apache-2.0"
   head "https://github.com/valitydev/woorl.git", branch: "master"
 
