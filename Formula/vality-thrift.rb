@@ -1,13 +1,13 @@
 class ValityThrift < Formula
   desc "Vality version of Apache Thrift"
   homepage "https://github.com/valitydev/thrift/"
-  url "https://github.com/valitydev/thrift/archive/refs/tags/0.19.0.tar.gz"
-  sha256 "80b3a936590148db5187b57323d8a7ba42bc1cd0e5da6e5e30fd95d00ce5564b"
+  url "https://github.com/valitydev/thrift/archive/refs/tags/0.19.1.tar.gz"
+  sha256 "3d9381089da646ad93088915fb8fb748a65a8634b270fcc9f31270274d06f76f"
   license "Apache-2.0"
   head "https://github.com/valitydev/thrift.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/valitydev/homebrew-tap/releases/download/vality-thrift-0.19.0"
+    root_url "https://github.com/valitydev/homebrew-tap/releases/download/vality-thrift-0.19.1"
     rebuild 1
     sha256 cellar: :any,                 arm64_sonoma: "a390600db7d197d9e2c3d3bfabbd181fd1b47f9c3bfd15038aa2313962a70210"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "d8c2119f05e68a26f4abad3a9791a5fcb2ddc60b2c6f56bc4354e532f4185ab6"
