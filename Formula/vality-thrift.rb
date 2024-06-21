@@ -8,8 +8,8 @@ class ValityThrift < Formula
 
   bottle do
     root_url "https://github.com/valitydev/homebrew-tap/releases/download/vality-thrift-0.20.0"
-    sha256 cellar: :any,                 arm64_sonoma: "26877f02fb8a9eea45a5d88511533790a1d6647e0d906fa0fe882097bdd170af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ba8f66612430efc166d20747839ce78cb2a80e32335cc8f0c79a1954fc3cb6af"
+    sha256 cellar: :any,                 arm64_sonoma: "8d13104d06b145d4def2896fe8f35c4fd3f7d376106b85fcba210464bb9ee0f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "60ca122464f6c694ddf0c14ca9a9b1b3c5ad5bbfa310cb4a149543562fae0f61"
   end
 
   depends_on "autoconf" => :build
