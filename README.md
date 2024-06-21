@@ -9,6 +9,18 @@ brew tap valitydev/tap
 brew install <FORMULA>
 ```
 
+## Update
+
+```
+$ brew uninstall vality-thrift
+$ brew tap valitydev/tap
+$ brew update   
+$ brew install vality-thrift     
+$ brew install woorl
+$ thrift -version    
+Thrift version 0.19.0
+```
+
 ## Formulae
 
 | Repository                                           | Formula                             | Description                     |
