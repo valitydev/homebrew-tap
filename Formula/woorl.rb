@@ -8,9 +8,8 @@ class Woorl < Formula
 
   bottle do
     root_url "https://github.com/valitydev/homebrew-tap/releases/download/woorl-1.9"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "80064e74b735b5674905d08fc9bfeb05c420d5cf874ddba5f9c730d64b3e61dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "808b432aaf938dffec2acf4a95d23ec8d1ef53374d22f2f5013b00110b13c022"
+    sha256 cellar: :any,                  arm64_sonoma: "cc2a6a51ea0d9b194c2147c01ee9cd83a151f29fd32d42a558ad04bede9b0e3f"
+    sha256 cellar: :any_skip_relocation,  x86_64_linux: "9d6f8e9f5e9a8be8beea1d4d3d7a8a0d2a6b30ec2b6f48782e3bf0ad5843399a"
   end
 
   depends_on "rebar3" => :build
